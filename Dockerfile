@@ -2,6 +2,8 @@ FROM letfn/container
 
 WORKDIR /drone/src
 
+RUN echo 1
+
 RUN apt-get update && apt-get upgrade -y
 
 RUN curl -sSL -O https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
