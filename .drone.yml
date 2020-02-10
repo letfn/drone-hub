@@ -19,7 +19,6 @@ steps:
     repo: letfn/drone-hub
     skip_tls_verify: true
     tag: latest
-    tags: latest
     username:
       from_secret: docker_username
 
