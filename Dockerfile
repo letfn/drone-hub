@@ -9,7 +9,7 @@ RUN curl -sSL -O https://github.com/github/hub/releases/download/v2.14.1/hub-lin
   && mv hub-linux-amd64-2.14.1/bin/hub /usr/local/bin/ \
   && rm -rf hub-linux-amd64-2.14.1
 
-FROM letfn/container
+FROM letfn/python
 
 WORKDIR /drone/src
 
