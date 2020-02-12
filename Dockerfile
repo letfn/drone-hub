@@ -22,4 +22,4 @@ COPY plugin /plugin
 
 USER app
 
-ENTRYPOINT [ "/plugin" ]
+ENTRYPOINT [ "/tini", "--", "/plugin" ]
