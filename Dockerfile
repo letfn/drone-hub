@@ -1,6 +1,4 @@
-FROM ubuntu:bionic-20200112 AS download
-
-RUN apt-get update && apt-get install -y curl
+FROM letfn/container AS download
 
 WORKDIR /tmp
 
@@ -15,7 +13,7 @@ FROM letfn/container
 
 WORKDIR /drone/src
 
-RUN apt-get update && apt-get upgrade -y
+RUN apk update
 
 COPY --from=download /usr/local/bin/hub /usr/local/bin/hub
 
