@@ -9,9 +9,9 @@ platform:
 
 steps:
 - name: everything
-  image: letfn/drone-kaniko:a
+  image: letfn/drone-kaniko
   settings:
-    args: --destination=letfn/drone-hub --single-snapshot --reproducible
+    args: --destination=letfn/drone-hub
     cache: true
     cache_repo: defn/cache
     password:
