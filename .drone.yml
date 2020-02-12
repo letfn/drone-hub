@@ -37,6 +37,9 @@ steps:
 - name: everything
   image: letfn/container
   commands:
+  - id
+  - pwd
+  - ls -ld .drone.yml
   - drone fmt --save
 
 ---
