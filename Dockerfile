@@ -1,6 +1,6 @@
 FROM letfn/container AS download
 
-WORKDIR /tmp
+USER root
 
 RUN curl -sSL -O https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
   && tar xfz hub-linux-amd64-2.14.1.tgz \
@@ -13,10 +13,13 @@ FROM letfn/container
 
 WORKDIR /drone/src
 
+USER root
 RUN apk update
 
 COPY --from=download /usr/local/bin/hub /usr/local/bin/hub
 
 COPY plugin /plugin
+
+USER app
 
 ENTRYPOINT [ "/plugin" ]
