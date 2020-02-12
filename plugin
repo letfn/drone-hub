@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 function main {
-  local version="$(cat "${PLUGIN_VERSION}")"
-  hub release delete "${version}" || true
-  hub release create -a "${PLUGIN_FILE}" -m "${version}" "${version}"
+  hub release delete "${PLUGIN_VERSION}" || true
+  hub release create -a "${PLUGIN_FILE}" -m "${PLUGIN_VERSION}" "${PLUGIN_VERSION}"
 }
 
 main "$@"
