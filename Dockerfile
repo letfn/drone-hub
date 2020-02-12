@@ -14,7 +14,6 @@ FROM letfn/python
 WORKDIR /drone/src
 
 USER root
-RUN apk update
 
 COPY --from=download /usr/local/bin/hub /usr/local/bin/hub
 
