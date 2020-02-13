@@ -16,11 +16,14 @@ RUN curl -sSL -O https://github.com/cli/cli/releases/download/v0.5.4/gh_0.5.4_li
   && mv gh_0.5.4_linux_amd64/bin/gh /usr/local/bin/ \
   && rm -rf gh_0.5.4_linux_amd64
 
-
 FROM letfn/python
 
 COPY --from=download /usr/local/bin/hub /usr/local/bin/hub
 COPY --from=download /usr/local/bin/gh /usr/local/bin/gh
+
+USER root
+RUN apt-get update && apt-get install -y git
+USER app
 
 COPY plugin /plugin
 
